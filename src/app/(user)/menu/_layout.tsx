@@ -22,7 +22,6 @@ export default function MenuStack() {
             </Pressable>
           </Link>
         ),
-        animation: "slide_from_bottom",
       }}
     >
       <Stack.Screen name="index" options={{ title: "Menu" }} />
