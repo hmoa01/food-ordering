@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0df8449a-87df-4f7c-a9cb-9c963c8a7ec0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/ProductListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductListItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/supabase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/supabase.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(admin)/orders/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(admin)/orders/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(admin)/orders/list/archive.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(admin)/orders/list/archive.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(admin)/orders/list/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(admin)/orders/list/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(user)/orders/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(user)/orders/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(user)/orders/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(user)/orders/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OrderListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderListItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/database.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/providers/CardProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/providers/CardProvider.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
     </list>

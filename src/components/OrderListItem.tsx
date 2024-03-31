@@ -1,14 +1,15 @@
 import { Link, useSegments } from "expo-router";
+import { Order, Tables } from "../types";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-import { Order } from "../types";
+import React from "react";
 import dayjs from "dayjs";
-import realitveTime from "dayjs/plugin/relativeTime";
+import relativeTime from "dayjs/plugin/relativeTime";
 
-dayjs.extend(realitveTime);
+dayjs.extend(relativeTime);
 
 type OrderListItemProps = {
-  order: Order;
+  order: Tables<"orders">;
 };
 
 const OrderListItem = ({ order }: OrderListItemProps) => {
@@ -21,6 +22,7 @@ const OrderListItem = ({ order }: OrderListItemProps) => {
           <Text style={styles.title}>Order #{order.id}</Text>
           <Text style={styles.time}>{dayjs(order.created_at).fromNow()}</Text>
         </View>
+
         <Text style={styles.status}>{order.status}</Text>
       </Pressable>
     </Link>
