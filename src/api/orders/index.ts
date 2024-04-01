@@ -1,6 +1,6 @@
+import { InsertTables, UpdateTables } from "@/src/types";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
-import { InsertTables } from "@/src/types";
 import { supabase } from "@/src/lib/supabase";
 import { useAuth } from "@/src/providers/AuthProvider";
 
@@ -81,6 +81,37 @@ export const useInsertOrder = () => {
     async onSuccess() {
       // @ts-ignore
       await queryClient.invalidateQueries(["orders "]);
+    },
+  });
+};
+
+export const useUpdateOrder = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    async mutationFn({
+      id,
+      updatedFields,
+    }: {
+      id: number;
+      updatedFields: UpdateTables<"orders">;
+    }) {
+      const { data: updatedOrder, error } = await supabase
+        .from("orders")
+        .update(updatedFields)
+        .eq("id", id)
+        .select()
+        .single();
+
+      if (error) {
+        throw new Error(error.message);
+      }
+      return updatedOrder;
+    },
+    async onSuccess(_, { id }) {
+      // @ts-ignore
+      await queryClient.invalidateQueries(["orders"]);
+      // @ts-ignore
+      await queryClient.invalidateQueries(["orders", id]);
     },
   });
 };

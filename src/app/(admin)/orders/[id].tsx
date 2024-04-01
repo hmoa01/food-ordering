@@ -6,19 +6,27 @@ import {
   View,
 } from "react-native";
 import { Stack, useLocalSearchParams } from "expo-router";
+import { useOrderDetails, useUpdateOrder } from "@/src/api/orders";
 
 import Colors from "@/src/constants/Colors";
 import OrderItemListItem from "@/src/components/OrderItemListItem";
 import OrderListItem from "@/src/components/OrderListItem";
 import { OrderStatusList } from "@/src/types";
-import orders from "@/assets/data/orders";
-import { useOrderDetails } from "@/src/api/orders";
 
 const OrderDetailsScreen = () => {
   const { id: idString } = useLocalSearchParams();
   const id = parseFloat(typeof idString === "string" ? idString : idString[0]);
 
   const { data: order, error, isLoading } = useOrderDetails(id);
+  const { mutate: updateOrder } = useUpdateOrder();
+
+  const updateStatus = (status: string) => {
+    console.log(status, id);
+    updateOrder({
+      id: id,
+      updatedFields: { status },
+    });
+  };
 
   if (!order) return <Text>Order not found!</Text>;
 
@@ -44,7 +52,7 @@ const OrderDetailsScreen = () => {
               {OrderStatusList.map((status) => (
                 <Pressable
                   key={status}
-                  onPress={() => console.warn("Update status")} // ADD UPDATE LOGIC LATER
+                  onPress={() => updateStatus(status)}
                   style={{
                     borderColor: Colors.light.tint,
                     borderWidth: 1,
