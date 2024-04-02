@@ -12,6 +12,7 @@ import OrderItemListItem from "@/src/components/OrderItemListItem";
 import OrderListItem from "@/src/components/OrderListItem";
 import { OrderStatusList } from "@/src/types";
 import { useOrderDetails } from "@/src/api/orders";
+import { useUpdateOrderSubscription } from "@/src/api/orders/subscription";
 
 const OrderDetailsScreen = () => {
   const { id: idString } = useLocalSearchParams();
@@ -19,7 +20,7 @@ const OrderDetailsScreen = () => {
 
   const { data: order, error, isLoading } = useOrderDetails(id);
 
-  // const order = orders.find((order) => order.id.toString() === id);
+  useUpdateOrderSubscription(id);
 
   if (!order) return <Text>Order not found!</Text>;
 
