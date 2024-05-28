@@ -25,7 +25,7 @@ export const useAdminOrderList = ({ archived = false }) => {
 export const useMyOrderList = () => {
   const { session } = useAuth();
   const id = session?.user?.id;
-  console.log(session?.user.id);
+ 
 
   return useQuery({
     queryKey: ["orders", { userId: id }],

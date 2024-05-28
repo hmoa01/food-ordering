@@ -21,7 +21,6 @@ const OrderDetailsScreen = () => {
   const { mutate: updateOrder } = useUpdateOrder();
 
   const updateStatus = (status: string) => {
-    console.log(status, id);
     updateOrder({
       id: id,
       updatedFields: { status },
